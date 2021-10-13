@@ -1,7 +1,8 @@
 import os
 import sys
 
-import excelmath as em
+from src import excelmath as em
+from src import plot as plt
 
 
 def main():
@@ -10,7 +11,7 @@ def main():
     # Part 1: processing the users arguments
     #
 
-    if len(sys.argv) < 4:
+    if len(sys.argv) > 4:
         print("Invalid number of arguments")
         exit(-1)
 
@@ -29,11 +30,17 @@ def main():
         print("Please enter either col or row")
         exit(-3)
 
-    operations = ["sum", "stdev", "avg"]
-    op_funcs = [em.sum, em.stdev, em.avg]
-    for operation in sys.argv[2:]:
-        if 
+    operations = ["get_sum", "get_stdev", "get_avg"]
+    op_funcs = [em.get_sum, em.get_stdev, em.get_avg]
 
+    for operation in sys.argv[3:]:
+
+        if operation in operations:
+            op_num = operations.index(operation)
+            result = op_funcs[op_num](processed_data)
+            print(result)
+        else:
+            print("{} is not a valid operation".format(operation))
 
 
 if __name__ == "__main__":
