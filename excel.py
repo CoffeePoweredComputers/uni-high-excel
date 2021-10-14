@@ -30,8 +30,8 @@ def main():
         print("Please enter either col or row")
         exit(-3)
 
-    operations = ["get_sum", "get_stdev", "get_avg"]
-    op_funcs = [em.get_sum, em.get_stdev, em.get_avg]
+    operations = ["get_sum", "get_stdev", "get_avg", "plot"]
+    op_funcs = [em.get_sum, em.get_stdev, em.get_avg, plt.plot_csv]
 
     for operation in sys.argv[3:]:
 

@@ -1,13 +1,16 @@
 import matplotlib.pyplot as plt
 
-def plot_csv(x, y):
+def plot_csv(data):
+
+    x = data[0]
+    ys = data[1:]
 
     plt.xlabel("X-Axis")
     plt.xlabel("X-Axis")
     plt.title("Some numbers")
 
-    for i in range(len(y[0])):
-        plt.plot(x,[pt[i] for pt in y],label = 'id %s'%i)
-        plt.legend()
-        plt.show()
+    for y in ys:
+        plt.plot(x, y)
+    plt.legend()
+    plt.show()
 
