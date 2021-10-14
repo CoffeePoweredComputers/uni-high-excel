@@ -2,27 +2,29 @@ import statistics
 
 def get_sum(num_list):
     '''
-    Implement the sum function using the total/sum pattern
+    Takes a list of lists and returns a list of the sums 
+    of each sublist.
     '''
     return list(map(sum, num_list))
 
 def get_stdev(num_list):
     '''
-    Implement the standard deviation of a list of numbers
+    Takes a list of lists and returns a list of the stdevs 
+    of each sublist.
     '''
     return list(map(statistics.stdev, num_list))
 
 def get_avg(num_list):
     '''
-    Implement
+    Takes a list of lists and returns a list of the average 
+    of each sublist.
     '''
     return list(map(lambda x : sum(x)/len(x), num_list))
 
 
 def get_rows(data):
     '''
-    Given a list of strings convert to list of lists
-    where each sublist is a list of integers
+    Convert a list of csv strings to a list of integers
     '''
     return [list(map(int, y)) for y in map(lambda x : x.split(","), data)]
 

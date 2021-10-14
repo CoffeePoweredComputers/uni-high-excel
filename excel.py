@@ -11,7 +11,7 @@ def main():
     # Part 1: processing the users arguments
     #
 
-    if len(sys.argv) > 4:
+    if len(sys.argv) < 4:
         print("Invalid number of arguments")
         exit(-1)
 
